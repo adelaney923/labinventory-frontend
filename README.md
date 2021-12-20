@@ -47,5 +47,7 @@ Django Rest Framework
 |GET| /consumables/ | required | 200 - array of all blogs for user
 |POST| /consumables/ | required | 201 - consumable object
 |GET| /consumables/:id | required | 200 - blog object
-|DELETE| //consumables/:id/ | required | 204
-|PATCH| //consumables/:id/ | required | 200 - blog object
+|DELETE| /consumables/:id/ | required | 204
+|PATCH| /consumables/:id/ | required | 200 - blog object
+
+The consumables is one example of a lab supply that has a model for storing inventory.  There are 3 other models for controls, reagents and calibrators that will follow these same routes.
