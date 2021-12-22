@@ -5,7 +5,7 @@ import Landing from './Components/LandingPage/Landing'
 import Contact from './Components/Contact/Contact'
 import Signup from './Components/Auth/Signup'
 import Login from './Components/Auth/Login'
-import InventoryHome from './Components/Inventory/InventoryHomeHome'
+import InventoryHome from './Components/Inventory/InventoryHome'
 import UserContext from "./context/userContext";
 // import axios from "axios";
 
