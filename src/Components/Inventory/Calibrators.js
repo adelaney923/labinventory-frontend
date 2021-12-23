@@ -12,6 +12,7 @@ function Calibrators() {
   const [calibrators, setCalibrators] = useState();
 
 //   setting states for new calibrator form
+  const [id, setId] = useState();
   const [description, setDescription] = useState();
   const [storageTemp, setStorageTemp] = useState();
   const [refNum, setRefNum] = useState();
@@ -34,6 +35,9 @@ function Calibrators() {
       setIsAdding(!isAdding)
   }
 
+// variable to choose what is shown in calibrators table
+  const [isCalibrators, setIsCalibrators] = useState(false)
+
   const getCalibrators = () => {
     if (localStorage.getItem("auth-token") !== null) {
       fetch("http://localhost:8000/calibrators/", {
@@ -42,7 +46,9 @@ function Calibrators() {
         },
       })
         .then((res) => res.json())
-        .then((data) => setCalibrators(data));
+        .then((data) => {
+            setCalibrators(data)
+            setIsCalibrators(!isCalibrators)});
     }
   };
 
@@ -53,7 +59,7 @@ function Calibrators() {
 //   method to update one of the calibrators
   const editCal = (calibrator) => {
     console.log("edited");
-    console.log(calibrator)
+    setId(calibrator.id)
     setDescription(calibrator.description);
     setStorageTemp(calibrator.storage_temp);
     setRefNum(calibrator.reference_num);
@@ -133,6 +139,37 @@ function Calibrators() {
   };
 }
 
+    const patchRequest = (e) => {
+      e.preventDefault();
+      console.log("patch");
+      console.log(id);
+      if (localStorage.getItem("auth-token") !== null) {
+        fetch("http://localhost:8000/calibrators/" + id, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Token ${userData.token}`,
+          },
+          body: JSON.stringify({
+            description: description,
+            storage_temp: storageTemp,
+            reference_num: refNum,
+            part_number: partNum,
+            unit_of_measure: uom,
+            quantity: quantity,
+            lot_number: lotNum,
+            expiration_date: expiration,
+            comments: comments,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            getCalibrators();
+          });
+      }
+      //   getCalibrators();
+    };;
 
   return (
     <div>
@@ -163,10 +200,12 @@ function Calibrators() {
             </button>
           </div>
         </div>
+
+        {/* back of card for updating calibrator */}
         <div className="backCard">
           <div className="newCalibrator">
             <h3>Update Calibrator</h3>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={patchRequest}>
               <Table responsive striped bordered hover size="sm">
                 <thead>
                   <tr>
@@ -257,7 +296,7 @@ function Calibrators() {
                       />
                     </td>
                     <td>
-                      <button onClick={handleSubmit} onClick={handleClick}>
+                      <button onClick={handleClick}>
                         Update
                       </button>
                     </td>
