@@ -1,4 +1,14 @@
 /* flipcard styling */
+.flipCard {
+    margin-bottom: 10px;
+}
 .frontCard {
     background-color: white;
+}
+.backCard {
+    background-color: white;
+    height: 70%;
+}
+.controlTable, .reagentTable, .consumableTable, .calibratorTable {
+    min-height: 130px;
 }

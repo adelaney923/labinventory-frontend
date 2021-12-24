@@ -9,7 +9,7 @@ function Calibrators() {
   const { userData } = useContext(UserContext);
   const navigate = useNavigate()
   const [redirect, setRedirect] = useState(false);
-  const [calibrators, setCalibrators] = useState();
+  const [calibrators, setCalibrators] = useState([]);
 
 //   setting states for new calibrator form
   const [id, setId] = useState();
@@ -172,43 +172,16 @@ function Calibrators() {
     };;
 
   return (
-    <div>
+    <div id="calibrators">
       <h1>Calibrators</h1>
-      <ReactCardFlip isFlipped={isFlipped} fliDirection="vertical">
-        <div className="frontCard">
-          <div className="calibratorTable">
-            <Table responsive striped bordered hover size="sm">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Description</th>
-                  <th>Storage</th>
-                  <th>REF</th>
-                  <th>P/N</th>
-                  <th>UOM</th>
-                  <th>QTY</th>
-                  <th>Lot</th>
-                  <th>Expiration Date</th>
-                  <th>Comments</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>{calibratorTable}</tbody>
-            </Table>
-            <button onClick={showAdd}>
-              Add Calibrator
-            </button>
-          </div>
-        </div>
-
-        {/* back of card for updating calibrator */}
-        <div className="backCard">
-          <div className="newCalibrator">
-            <h3>Update Calibrator</h3>
-            <form onSubmit={patchRequest}>
+      {calibrators.length !== 0 ? (
+        <ReactCardFlip isFlipped={isFlipped} fliDirection="vertical">
+          <div className="frontCard">
+            <div className="calibratorTable">
               <Table responsive striped bordered hover size="sm">
                 <thead>
                   <tr>
+                    <th>#</th>
                     <th>Description</th>
                     <th>Storage</th>
                     <th>REF</th>
@@ -221,94 +194,119 @@ function Calibrators() {
                     <th></th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <input
-                        type="text"
-                        onChange={(e) => setDescription(e.target.value)}
-                        placeholder="Description"
-                        value={description}
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        onChange={(e) => setStorageTemp(e.target.value)}
-                        placeholder="Storage Temp"
-                        value={storageTemp}
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        onChange={(e) => setRefNum(e.target.value)}
-                        placeholder="Reference Number"
-                        value={refNum}
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        onChange={(e) => setPartNum(e.target.value)}
-                        placeholder="Part Number"
-                        value={partNum}
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        onChange={(e) => setUom(e.target.value)}
-                        placeholder="UOM"
-                        value={uom}
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        onChange={(e) => setQuantity(e.target.value)}
-                        placeholder="Quantity"
-                        value={quantity}
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        onChange={(e) => setLotNum(e.target.value)}
-                        placeholder="Lot"
-                        value={lotNum}
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        onChange={(e) => setExpiration(e.target.value)}
-                        placeholder="Expiration"
-                        value={expiration}
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        onChange={(e) => setComments(e.target.value)}
-                        placeholder="Comments"
-                        value={comments}
-                      />
-                    </td>
-                    <td>
-                      <button onClick={handleClick}>
-                        Update
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
+                <tbody>{calibratorTable}</tbody>
               </Table>
-            </form>
+              <button onClick={showAdd}>Add Calibrator</button>
+            </div>
           </div>
-        </div>
-      </ReactCardFlip>
 
-      {/* form for adding a calibrator */}
+          <div className="backCard">
+            <div className="newCalibrator">
+              <h3>Update Calibrator</h3>
+              <form onSubmit={patchRequest}>
+                <Table responsive striped bordered hover size="sm">
+                  <thead>
+                    <tr>
+                      <th>Description</th>
+                      <th>Storage</th>
+                      <th>REF</th>
+                      <th>P/N</th>
+                      <th>UOM</th>
+                      <th>QTY</th>
+                      <th>Lot</th>
+                      <th>Expiration Date</th>
+                      <th>Comments</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          onChange={(e) => setDescription(e.target.value)}
+                          placeholder="Description"
+                          value={description}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          onChange={(e) => setStorageTemp(e.target.value)}
+                          placeholder="Storage Temp"
+                          value={storageTemp}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          onChange={(e) => setRefNum(e.target.value)}
+                          placeholder="Reference Number"
+                          value={refNum}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          onChange={(e) => setPartNum(e.target.value)}
+                          placeholder="Part Number"
+                          value={partNum}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          onChange={(e) => setUom(e.target.value)}
+                          placeholder="UOM"
+                          value={uom}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          onChange={(e) => setQuantity(e.target.value)}
+                          placeholder="Quantity"
+                          value={quantity}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          onChange={(e) => setLotNum(e.target.value)}
+                          placeholder="Lot"
+                          value={lotNum}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          onChange={(e) => setExpiration(e.target.value)}
+                          placeholder="Expiration"
+                          value={expiration}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          onChange={(e) => setComments(e.target.value)}
+                          placeholder="Comments"
+                          value={comments}
+                        />
+                      </td>
+                      <td>
+                        <button onClick={handleClick}>Update</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </Table>
+              </form>
+            </div>
+          </div>
+        </ReactCardFlip>
+      ) : (
+        <h3>Add calibrators</h3>
+      )}
+
       <div
         className="newCalibrator"
         style={{ display: isAdding ? "block" : "none" }}

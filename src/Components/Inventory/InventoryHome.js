@@ -11,11 +11,18 @@ function InventoryHome() {
 
     return (
         <div id='inventory'>
+            {userData.token ? (
+                <>
             <h1>Inventory</h1>
             <Controls />
             <Calibrators />
             <Reagents />
             <Consumables />
+            </>
+            ) : (
+                <p>not logged in</p>
+            )
+            }
         </div>
     )
 }

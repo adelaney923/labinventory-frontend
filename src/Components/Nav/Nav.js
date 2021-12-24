@@ -10,7 +10,7 @@ const Header = () => {
           <Container fluid>
             <Navbar.Brand>
               <Link to="/">
-                <span className="sitename">LabList</span>
+                <span className="lablist">LabList</span>
               </Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="offcanvasNavbar" />
@@ -22,7 +22,7 @@ const Header = () => {
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id="offcanvasNavbarLabel">
                   <Link to="/">
-                    <span className="sitename">LabList</span>
+                    <span className="lablist">LabList</span>
                   </Link>
                 </Offcanvas.Title>
               </Offcanvas.Header>
