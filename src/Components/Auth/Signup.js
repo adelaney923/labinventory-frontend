@@ -4,8 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import UserContext from "../../context/userContext";
-// import ErrorNotice from "./ErrorNotice";
-
+import './auth.css'
 
 function SignUp() {
   const navigate = useNavigate();
@@ -15,7 +14,6 @@ function SignUp() {
   let signupUrl = "http://localhost:8000/sign-up/";
   let loginUrl = "http://localhost:8000/sign-in/";
   //   const [error, setError] = useState();
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,57 +25,71 @@ function SignUp() {
         },
       });
       const loginResponse = await axios.post(loginUrl, {
-          user: {
-              email: email,
-              password: password,
-          }
+        user: {
+          email: email,
+          password: password,
+        },
       });
       setUserData({
         email: loginResponse.data.email,
         token: loginResponse.data.token,
       });
       localStorage.setItem("auth-token", loginResponse.data.token);
-      navigate('/inventory')
+      navigate("/inventory");
       console.log(newUser.data);
-      console.log(loginResponse.data)
+      console.log(loginResponse.data);
     } catch (err) {
       console.error(err);
     }
   };
 
-
   return (
     <>
       <div id="signup">
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
+        <div className="container">
+          <img
+            className="labphoto"
+            src="https://res.cloudinary.com/adelaney923/image/upload/v1640113474/labphoto1_l17oef.jpg"
+            alt="labphoto"
+          />
+          <div id="signupForm">
+            <div className="formcontent">
+              <Form className="signupform" onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>
+                    <h5>Email Address</h5>
+                  </Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="Enter email"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Create Account
-          </Button>
-        </Form>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>
+                    <h5>Password</h5>
+                  </Form.Label>
+                  <Form.Control
+                    type="password"
+                    placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </Form.Group>
+                <Button className="signuplink" variant="primary" type="submit">
+                  Create Account
+                </Button>
+              </Form>
 
-        <p>Already have an account?</p>
-        <Button variant="primary" type="submit">
-          <Link className='signinlink' to="/login">
-              Sign In
-          </Link>
-        </Button>
+              <h5>Already have an account?</h5>
+              <Button className="loginLink" variant="primary" type="submit">
+                <Link className="login-link" to="/login">
+                  Login
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

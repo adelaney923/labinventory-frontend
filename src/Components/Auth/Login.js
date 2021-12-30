@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import UserContext from "../../context/userContext";
-// import ErrorNotice from "./ErrorNotice";
+import './auth.css'
 
 function Login() {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ function Login() {
           password: password,
         },
       });
-      console.log(loginResponse.data.user.token)
+      console.log(loginResponse.data.user.token);
       setUserData({
         email: loginResponse.data.user.email,
         token: loginResponse.data.user.token,
@@ -35,39 +35,52 @@ function Login() {
   };
 
   return (
-    <>
-      <div id="login">
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
+    <div id="login">
+      <div className="container">
+        <img
+          className="labphoto"
+          src="https://res.cloudinary.com/adelaney923/image/upload/v1640113474/labphoto1_l17oef.jpg"
+          alt="labphoto"
+        />
+        <div id="loginForm">
+          <div className="formcontent">
+            <Form className="loginform" onSubmit={handleSubmit}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>
+                  <h5>Email Address</h5>
+                </Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Login
-          </Button>
-        </Form>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>
+                  <h5>Password</h5>
+                </Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </Form.Group>
+              <Button className="loginLink" variant="primary" type="submit">
+                Login
+              </Button>
+            </Form>
 
-        <p>New to LabList?</p>
-        <Button variant="primary" type="submit">
-          <Link className="signuplink" to="/sign-up">
-            Sign Up
-          </Link>
-        </Button>
+            <h5>New to LabList?</h5>
+            <Button className="signuplink" variant="primary" type="submit">
+              <Link className="signup-link" to="/sign-up">
+                Sign Up
+              </Link>
+            </Button>
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -12,3 +12,36 @@
 .controlTable, .reagentTable, .consumableTable, .calibratorTable {
     min-height: 130px;
 }
+
+.container {
+  position: relative;
+}
+/* Bottom right text */
+.errorMessage {
+  position: absolute;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 0;
+  bottom: 0;
+  right: 15%;
+  background-color: white;
+  color: black;
+  transform:rotate(45deg);
+  text-align: center;
+  height: 250px;
+  width: 250px;
+}
+.errorText {
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-size: 130%;
+    margin-top: 32%;
+    margin-right: 10%;
+    transform: rotate(-45deg);
+}
+.loginlink {
+    text-decoration: none;
+    color: black;
+}
+.loginlink:hover {
+    color: #1DC7E9
+}

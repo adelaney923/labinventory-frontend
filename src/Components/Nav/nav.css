@@ -1,0 +1,11 @@
+.nav-links {
+    text-decoration: none;
+    color: black;
+}
+.nav-links:hover {
+    color: #1DC7E9;
+}
+.nav-links-main {
+    text-decoration: none;
+    font-size: 120%;
+}

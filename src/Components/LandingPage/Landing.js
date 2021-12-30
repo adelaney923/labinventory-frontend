@@ -10,7 +10,7 @@ const Landing = () => {
             src="https://res.cloudinary.com/adelaney923/image/upload/v1640113474/labphoto1_l17oef.jpg"
             alt="labphoto"
           />
-          <div class="text-block">
+          <div className="text-block">
               <div className='text'>
             <h1>
               <span className="lablist">LabList</span>
