@@ -1,18 +1,4 @@
-/* flipcard styling */
-.flipCard {
-    margin-bottom: 10px;
-}
-.frontCard {
-    background-color: white;
-}
-.backCard {
-    background-color: white;
-    height: 70%;
-}
-.controlTable, .reagentTable, .consumableTable, .calibratorTable {
-    min-height: 130px;
-}
-
+/* inventory landing page */
 .container {
   position: relative;
 }
@@ -44,4 +30,41 @@
 }
 .loginlink:hover {
     color: #1DC7E9
+}
+
+/* flipcard styling */
+.flipCard {
+    margin-bottom: 15px;
+}
+.frontCard {
+    background-color: white;
+}
+.backCard {
+    background-color: white;
+    max-height: 140px;
+    margin-bottom: 15px;
+}
+.controlTable, .reagentTable, .consumableTable, .calibratorTable {
+    min-height: 150px;
+}
+
+.inventoryHeader {
+    font-family: 'Saira Semi Condensed', sans-serif;
+    color: black;
+}
+
+.invTitle {
+    font-family: 'Saira Semi Condensed', sans-serif;
+    color: #1DC7E9;
+}
+
+#controls, #calibrators, #reagents, #consumables h4 {
+    font-family: 'Saira Semi Condensed', sans-serif;
+    color: black;
+}
+
+@media only screen and (max-width: 768px) {
+    .flipCard {
+        margin-bottom: 20px;
+    }
 }

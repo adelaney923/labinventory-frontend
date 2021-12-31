@@ -14,7 +14,7 @@ function InventoryHome() {
       <div id="inventory">
         {userData.token ? (
           <div>
-            <h1>Inventory</h1>
+            <h1 className='inventoryHeader'>Inventory</h1>
             <Controls />
             <Calibrators />
             <Reagents />

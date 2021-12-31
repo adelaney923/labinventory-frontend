@@ -183,9 +183,13 @@ function Reagents() {
 
   return (
     <div id="reagents">
-      <h1>Reagents</h1>
+      <h3 className="invTitle">Reagents</h3>
       {reagents.length !== 0 ? (
-        <ReactCardFlip className='flipCard' isFlipped={isFlipped} fliDirection="vertical">
+        <ReactCardFlip
+          className="flipCard"
+          isFlipped={isFlipped}
+          fliDirection="vertical"
+        >
           <div className="frontCard">
             <div className="reagentTable">
               <Table responsive striped bordered hover size="sm">
@@ -237,6 +241,7 @@ function Reagents() {
                           onChange={(e) => setDescription(e.target.value)}
                           placeholder="Description"
                           value={description}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -245,6 +250,7 @@ function Reagents() {
                           onChange={(e) => setStorageTemp(e.target.value)}
                           placeholder="Storage Temp"
                           value={storageTemp}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -253,6 +259,7 @@ function Reagents() {
                           onChange={(e) => setRefNum(e.target.value)}
                           placeholder="Reference Number"
                           value={refNum}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -261,6 +268,7 @@ function Reagents() {
                           onChange={(e) => setPartNum(e.target.value)}
                           placeholder="Part Number"
                           value={partNum}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -269,6 +277,7 @@ function Reagents() {
                           onChange={(e) => setUom(e.target.value)}
                           placeholder="UOM"
                           value={uom}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -277,6 +286,7 @@ function Reagents() {
                           onChange={(e) => setQuantity(e.target.value)}
                           placeholder="Quantity"
                           value={quantity}
+                          size="4"
                         />
                       </td>
                       <td>
@@ -285,6 +295,7 @@ function Reagents() {
                           onChange={(e) => setLotNum(e.target.value)}
                           placeholder="Lot"
                           value={lotNum}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -293,6 +304,7 @@ function Reagents() {
                           onChange={(e) => setExpiration(e.target.value)}
                           placeholder="Expiration"
                           value={expiration}
+                          size="10"
                         />
                       </td>
                       <td>
@@ -301,6 +313,7 @@ function Reagents() {
                           onChange={(e) => setComments(e.target.value)}
                           placeholder="Comments"
                           value={comments}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -314,7 +327,7 @@ function Reagents() {
           </div>
         </ReactCardFlip>
       ) : (
-        <h3>Add reagents</h3>
+        <h4>No reagents added yet.</h4>
       )}
 
       {/* form for adding a calibrator */}
@@ -347,6 +360,7 @@ function Reagents() {
                     type="text"
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder="Description"
+                    size="15"
                   />
                 </td>
                 <td>
@@ -354,6 +368,7 @@ function Reagents() {
                     type="text"
                     onChange={(e) => setStorageTemp(e.target.value)}
                     placeholder="Storage Temp"
+                    size="15"
                   />
                 </td>
                 <td>
@@ -361,6 +376,7 @@ function Reagents() {
                     type="text"
                     onChange={(e) => setRefNum(e.target.value)}
                     placeholder="Reference Number"
+                    size="15"
                   />
                 </td>
                 <td>
@@ -368,6 +384,7 @@ function Reagents() {
                     type="text"
                     onChange={(e) => setPartNum(e.target.value)}
                     placeholder="Part Number"
+                    size="15"
                   />
                 </td>
                 <td>
@@ -375,6 +392,7 @@ function Reagents() {
                     type="text"
                     onChange={(e) => setUom(e.target.value)}
                     placeholder="UOM"
+                    size="15"
                   />
                 </td>
                 <td>
@@ -382,6 +400,7 @@ function Reagents() {
                     type="text"
                     onChange={(e) => setQuantity(e.target.value)}
                     placeholder="Quantity"
+                    size="4"
                   />
                 </td>
                 <td>
@@ -389,6 +408,7 @@ function Reagents() {
                     type="text"
                     onChange={(e) => setLotNum(e.target.value)}
                     placeholder="Lot"
+                    size="15"
                   />
                 </td>
                 <td>
@@ -396,6 +416,7 @@ function Reagents() {
                     type="text"
                     onChange={(e) => setExpiration(e.target.value)}
                     placeholder="Expiration"
+                    size="10"
                   />
                 </td>
                 <td>
@@ -403,6 +424,7 @@ function Reagents() {
                     type="text"
                     onChange={(e) => setComments(e.target.value)}
                     placeholder="Comments"
+                    size="15"
                   />
                 </td>
                 <td>

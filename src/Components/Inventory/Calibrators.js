@@ -173,7 +173,7 @@ function Calibrators() {
 
   return (
     <div id="calibrators">
-      <h1>Calibrators</h1>
+      <h3 className="invTitle">Calibrators</h3>
       {calibrators.length !== 0 ? (
         <ReactCardFlip isFlipped={isFlipped} fliDirection="vertical">
           <div className="frontCard">
@@ -227,6 +227,7 @@ function Calibrators() {
                           onChange={(e) => setDescription(e.target.value)}
                           placeholder="Description"
                           value={description}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -235,6 +236,7 @@ function Calibrators() {
                           onChange={(e) => setStorageTemp(e.target.value)}
                           placeholder="Storage Temp"
                           value={storageTemp}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -243,6 +245,7 @@ function Calibrators() {
                           onChange={(e) => setRefNum(e.target.value)}
                           placeholder="Reference Number"
                           value={refNum}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -251,6 +254,7 @@ function Calibrators() {
                           onChange={(e) => setPartNum(e.target.value)}
                           placeholder="Part Number"
                           value={partNum}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -259,6 +263,7 @@ function Calibrators() {
                           onChange={(e) => setUom(e.target.value)}
                           placeholder="UOM"
                           value={uom}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -267,6 +272,7 @@ function Calibrators() {
                           onChange={(e) => setQuantity(e.target.value)}
                           placeholder="Quantity"
                           value={quantity}
+                          size="4"
                         />
                       </td>
                       <td>
@@ -275,6 +281,7 @@ function Calibrators() {
                           onChange={(e) => setLotNum(e.target.value)}
                           placeholder="Lot"
                           value={lotNum}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -283,6 +290,7 @@ function Calibrators() {
                           onChange={(e) => setExpiration(e.target.value)}
                           placeholder="Expiration"
                           value={expiration}
+                          size="10"
                         />
                       </td>
                       <td>
@@ -291,6 +299,7 @@ function Calibrators() {
                           onChange={(e) => setComments(e.target.value)}
                           placeholder="Comments"
                           value={comments}
+                          size="15"
                         />
                       </td>
                       <td>
@@ -304,7 +313,7 @@ function Calibrators() {
           </div>
         </ReactCardFlip>
       ) : (
-        <h3>Add calibrators</h3>
+        <h4>No calibrators added yet.</h4>
       )}
 
       <div
@@ -335,6 +344,7 @@ function Calibrators() {
                     type="text"
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder="Description"
+                    size="15"
                   />
                 </td>
                 <td>
@@ -342,6 +352,7 @@ function Calibrators() {
                     type="text"
                     onChange={(e) => setStorageTemp(e.target.value)}
                     placeholder="Storage Temp"
+                    size="15"
                   />
                 </td>
                 <td>
@@ -349,6 +360,7 @@ function Calibrators() {
                     type="text"
                     onChange={(e) => setRefNum(e.target.value)}
                     placeholder="Reference Number"
+                    size="15"
                   />
                 </td>
                 <td>
@@ -356,6 +368,7 @@ function Calibrators() {
                     type="text"
                     onChange={(e) => setPartNum(e.target.value)}
                     placeholder="Part Number"
+                    size="15"
                   />
                 </td>
                 <td>
@@ -363,6 +376,7 @@ function Calibrators() {
                     type="text"
                     onChange={(e) => setUom(e.target.value)}
                     placeholder="UOM"
+                    size="15"
                   />
                 </td>
                 <td>
@@ -370,6 +384,7 @@ function Calibrators() {
                     type="text"
                     onChange={(e) => setQuantity(e.target.value)}
                     placeholder="Quantity"
+                    size="4"
                   />
                 </td>
                 <td>
@@ -377,6 +392,7 @@ function Calibrators() {
                     type="text"
                     onChange={(e) => setLotNum(e.target.value)}
                     placeholder="Lot"
+                    size="15"
                   />
                 </td>
                 <td>
@@ -384,6 +400,7 @@ function Calibrators() {
                     type="text"
                     onChange={(e) => setExpiration(e.target.value)}
                     placeholder="Expiration"
+                    size="10"
                   />
                 </td>
                 <td>
@@ -391,6 +408,7 @@ function Calibrators() {
                     type="text"
                     onChange={(e) => setComments(e.target.value)}
                     placeholder="Comments"
+                    size="15"
                   />
                 </td>
                 <td>
