@@ -40,7 +40,7 @@ function Reagents() {
 
   const getReagents = () => {
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://localhost:8000/reagents/", {
+      fetch("http://labinventory-api.herokuapp.com/reagents/", {
         headers: {
           Authorization: `Token ${userData.token}`,
         },
@@ -75,7 +75,7 @@ function Reagents() {
   //   method to delete calibrator
   const deleteCal = (id) => {
     console.log("deleted");
-    fetch("http://localhost:8000/reagents/" + id, {
+    fetch("http://labinventory-api.herokuapp.com/reagents/" + id, {
       method: "DELETE",
       headers: {
         Authorization: `Token ${userData.token}`,
@@ -121,7 +121,7 @@ function Reagents() {
     e.preventDefault();
     console.log("submitted");
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://localhost:8000/reagents/", {
+      fetch("http://labinventory-api.herokuapp.com/reagents/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -152,7 +152,7 @@ function Reagents() {
     console.log("patch");
     console.log(id);
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://localhost:8000/reagents/" + id, {
+      fetch("http://labinventory-api.herokuapp.com/reagents/" + id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

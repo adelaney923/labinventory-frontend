@@ -40,7 +40,7 @@ function Controls() {
 
   const getControls = () => {
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://localhost:8000/controls/", {
+      fetch("http://labinventory-api.herokuapp.com/controls/", {
         headers: {
           Authorization: `Token ${userData.token}`,
         },
@@ -75,7 +75,7 @@ function Controls() {
   //   method to delete calibrator
   const deleteCal = (id) => {
     console.log("deleted");
-    fetch("http://localhost:8000/controls/" + id, {
+    fetch("http://labinventory-api.herokuapp.com/controls/" + id, {
       method: "DELETE",
       headers: {
         Authorization: `Token ${userData.token}`,
@@ -121,7 +121,7 @@ function Controls() {
     e.preventDefault();
     console.log("submitted");
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://localhost:8000/controls/", {
+      fetch("http://labinventory-api.herokuapp.com/controls/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -152,7 +152,7 @@ function Controls() {
     console.log("patch");
     console.log(id);
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://localhost:8000/controls/" + id, {
+      fetch("http://labinventory-api.herokuapp.com/controls/" + id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

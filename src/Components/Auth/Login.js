@@ -10,7 +10,7 @@ function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const { userData, setUserData } = useContext(UserContext);
-  let loginUrl = "http://localhost:8000/sign-in/";
+  let loginUrl = "http://labinventory-api.herokuapp.com/sign-in/";
   //   const [error, setError] = useState();
 
   const handleSubmit = async (e) => {

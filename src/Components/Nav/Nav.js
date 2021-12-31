@@ -11,18 +11,17 @@ const Header = () => {
 
   const logout = () => {
     console.log('loggingout')
-    fetch("http://localhost:8000/sign-out/", {
+    fetch("http://labinventory-api.herokuapp.com/sign-out/", {
       method: "DELETE",
       headers: {
-        Authorization: `Token ${userData.token}`
+        Authorization: `Token ${userData.token}`,
       },
-    })
-    .then((data) => {
+    }).then((data) => {
       setUserData({
         email: undefined,
-        token: undefined
-      })
-    })
+        token: undefined,
+      });
+    });
   }
 
   return (

@@ -40,7 +40,7 @@ function Consumables() {
 
   const getConsumables = () => {
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://localhost:8000/consumables/", {
+      fetch("http://labinventory-api.herokuapp.com/consumables/", {
         headers: {
           Authorization: `Token ${userData.token}`,
         },
@@ -75,7 +75,7 @@ function Consumables() {
   //   method to delete calibrator
   const deleteCal = (id) => {
     console.log("deleted");
-    fetch("http://localhost:8000/consumables/" + id, {
+    fetch("http://labinventory-api.herokuapp.com/consumables/" + id, {
       method: "DELETE",
       headers: {
         Authorization: `Token ${userData.token}`,
@@ -121,7 +121,7 @@ function Consumables() {
     e.preventDefault();
     console.log("submitted");
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://localhost:8000/consumables/", {
+      fetch("http://labinventory-api.herokuapp.com/consumables/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -152,7 +152,7 @@ function Consumables() {
     console.log("patch");
     console.log(id);
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://localhost:8000/consumables/" + id, {
+      fetch("http://labinventory-api.herokuapp.com/consumables/" + id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
