@@ -40,7 +40,7 @@ function Consumables() {
 
   const getConsumables = () => {
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://labinventory-api.herokuapp.com/consumables/", {
+      fetch("https://labinventory-api.herokuapp.com/consumables/", {
         headers: {
           Authorization: `Token ${userData.token}`,
         },
@@ -75,7 +75,7 @@ function Consumables() {
   //   method to delete calibrator
   const deleteCal = (id) => {
     console.log("deleted");
-    fetch("http://labinventory-api.herokuapp.com/consumables/" + id, {
+    fetch("https://labinventory-api.herokuapp.com/consumables/" + id, {
       method: "DELETE",
       headers: {
         Authorization: `Token ${userData.token}`,
@@ -121,7 +121,7 @@ function Consumables() {
     e.preventDefault();
     console.log("submitted");
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://labinventory-api.herokuapp.com/consumables/", {
+      fetch("https://labinventory-api.herokuapp.com/consumables/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -152,7 +152,7 @@ function Consumables() {
     console.log("patch");
     console.log(id);
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://labinventory-api.herokuapp.com/consumables/" + id, {
+      fetch("https://labinventory-api.herokuapp.com/consumables/" + id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -316,7 +316,9 @@ function Consumables() {
                         />
                       </td>
                       <td>
-                        <button onClick={handleClick}>Update</button>
+                        <button className="invButton" onClick={handleClick}>
+                          Update
+                        </button>
                       </td>
                     </tr>
                   </tbody>
@@ -330,7 +332,9 @@ function Consumables() {
       )}
 
       {/* form for adding a calibrator */}
-      <button onClick={showAdd}>Add Consumable</button>
+      <button className="invButton" onClick={showAdd}>
+        Add Consumable
+      </button>
       <div
         className="newConsumable"
         style={{ display: isAdding ? "block" : "none" }}
@@ -427,7 +431,9 @@ function Consumables() {
                   />
                 </td>
                 <td>
-                  <button onClick={handleSubmit}>Add</button>
+                  <button className="invButton" onClick={handleSubmit}>
+                    Add
+                  </button>
                 </td>
               </tr>
             </tbody>

@@ -40,7 +40,7 @@ function Calibrators() {
 
   const getCalibrators = () => {
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://labinventory-api.herokuapp.com/calibrators/", {
+      fetch("https://labinventory-api.herokuapp.com/calibrators/", {
         headers: {
           Authorization: `Token ${userData.token}`,
         },
@@ -74,7 +74,7 @@ function Calibrators() {
 //   method to delete calibrator
   const deleteCal = (id) => {
       console.log("deleted");
-      fetch("http://labinventory-api.herokuapp.com/calibrators/" + id, {
+      fetch("https://labinventory-api.herokuapp.com/calibrators/" + id, {
         method: "DELETE",
         headers: {
           Authorization: `Token ${userData.token}`,
@@ -113,7 +113,7 @@ function Calibrators() {
         e.preventDefault();
         console.log('submitted')
         if (localStorage.getItem("auth-token") !== null) {
-            fetch("http://labinventory-api.herokuapp.com/calibrators/", {
+            fetch("https://labinventory-api.herokuapp.com/calibrators/", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -144,7 +144,7 @@ function Calibrators() {
       console.log("patch");
       console.log(id);
       if (localStorage.getItem("auth-token") !== null) {
-        fetch("http://labinventory-api.herokuapp.com/calibrators/" + id, {
+        fetch("https://labinventory-api.herokuapp.com/calibrators/" + id, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -196,7 +196,6 @@ function Calibrators() {
                 </thead>
                 <tbody>{calibratorTable}</tbody>
               </Table>
-              <button onClick={showAdd}>Add Calibrator</button>
             </div>
           </div>
 
@@ -303,7 +302,9 @@ function Calibrators() {
                         />
                       </td>
                       <td>
-                        <button onClick={handleClick}>Update</button>
+                        <button className="invButton" onClick={handleClick}>
+                          Update
+                        </button>
                       </td>
                     </tr>
                   </tbody>
@@ -316,6 +317,9 @@ function Calibrators() {
         <h4>No calibrators added yet.</h4>
       )}
 
+      <button className="invButton" onClick={showAdd}>
+        Add Calibrator
+      </button>
       <div
         className="newCalibrator"
         style={{ display: isAdding ? "block" : "none" }}
@@ -412,7 +416,9 @@ function Calibrators() {
                   />
                 </td>
                 <td>
-                  <button onClick={handleSubmit}>Add</button>
+                  <button className="invButton" onClick={handleSubmit}>
+                    Add
+                  </button>
                 </td>
               </tr>
             </tbody>

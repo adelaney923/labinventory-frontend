@@ -40,7 +40,7 @@ function Reagents() {
 
   const getReagents = () => {
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://labinventory-api.herokuapp.com/reagents/", {
+      fetch("https://labinventory-api.herokuapp.com/reagents/", {
         headers: {
           Authorization: `Token ${userData.token}`,
         },
@@ -75,7 +75,7 @@ function Reagents() {
   //   method to delete calibrator
   const deleteCal = (id) => {
     console.log("deleted");
-    fetch("http://labinventory-api.herokuapp.com/reagents/" + id, {
+    fetch("https://labinventory-api.herokuapp.com/reagents/" + id, {
       method: "DELETE",
       headers: {
         Authorization: `Token ${userData.token}`,
@@ -121,7 +121,7 @@ function Reagents() {
     e.preventDefault();
     console.log("submitted");
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://labinventory-api.herokuapp.com/reagents/", {
+      fetch("https://labinventory-api.herokuapp.com/reagents/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -152,7 +152,7 @@ function Reagents() {
     console.log("patch");
     console.log(id);
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://labinventory-api.herokuapp.com/reagents/" + id, {
+      fetch("https://labinventory-api.herokuapp.com/reagents/" + id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -317,7 +317,9 @@ function Reagents() {
                         />
                       </td>
                       <td>
-                        <button onClick={handleClick}>Update</button>
+                        <button className="invButton" onClick={handleClick}>
+                          Update
+                        </button>
                       </td>
                     </tr>
                   </tbody>
@@ -331,7 +333,9 @@ function Reagents() {
       )}
 
       {/* form for adding a calibrator */}
-      <button onClick={showAdd}>Add Reagent</button>
+      <button className="invButton" onClick={showAdd}>
+        Add Reagent
+      </button>
       <div
         className="newReagent"
         style={{ display: isAdding ? "block" : "none" }}
@@ -428,7 +432,9 @@ function Reagents() {
                   />
                 </td>
                 <td>
-                  <button onClick={handleSubmit}>Add</button>
+                  <button className="invButton" onClick={handleSubmit}>
+                    Add
+                  </button>
                 </td>
               </tr>
             </tbody>

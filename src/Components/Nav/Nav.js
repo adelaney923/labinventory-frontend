@@ -11,7 +11,7 @@ const Header = () => {
 
   const logout = () => {
     console.log('loggingout')
-    fetch("http://labinventory-api.herokuapp.com/sign-out/", {
+    fetch("https://labinventory-api.herokuapp.com/sign-out/", {
       method: "DELETE",
       headers: {
         Authorization: `Token ${userData.token}`,

@@ -40,7 +40,7 @@ function Controls() {
 
   const getControls = () => {
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://labinventory-api.herokuapp.com/controls/", {
+      fetch("https://labinventory-api.herokuapp.com/controls/", {
         headers: {
           Authorization: `Token ${userData.token}`,
         },
@@ -75,7 +75,7 @@ function Controls() {
   //   method to delete calibrator
   const deleteCal = (id) => {
     console.log("deleted");
-    fetch("http://labinventory-api.herokuapp.com/controls/" + id, {
+    fetch("https://labinventory-api.herokuapp.com/controls/" + id, {
       method: "DELETE",
       headers: {
         Authorization: `Token ${userData.token}`,
@@ -121,7 +121,7 @@ function Controls() {
     e.preventDefault();
     console.log("submitted");
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://labinventory-api.herokuapp.com/controls/", {
+      fetch("https://labinventory-api.herokuapp.com/controls/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -152,7 +152,7 @@ function Controls() {
     console.log("patch");
     console.log(id);
     if (localStorage.getItem("auth-token") !== null) {
-      fetch("http://labinventory-api.herokuapp.com/controls/" + id, {
+      fetch("https://labinventory-api.herokuapp.com/controls/" + id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -317,7 +317,9 @@ function Controls() {
                         />
                       </td>
                       <td>
-                        <button onClick={handleClick}>Update</button>
+                        <button className="invButton" onClick={handleClick}>
+                          Update
+                        </button>
                       </td>
                     </tr>
                   </tbody>
@@ -331,7 +333,9 @@ function Controls() {
       )}
 
       {/* form for adding a calibrator */}
-      <button onClick={showAdd}>Add Control</button>
+      <button className="invButton" onClick={showAdd}>
+        Add Control
+      </button>
       <div
         className="newControl"
         style={{ display: isAdding ? "block" : "none" }}
@@ -428,7 +432,9 @@ function Controls() {
                   />
                 </td>
                 <td>
-                  <button onClick={handleSubmit}>Add</button>
+                  <button className="invButton" onClick={handleSubmit}>
+                    Add
+                  </button>
                 </td>
               </tr>
             </tbody>
