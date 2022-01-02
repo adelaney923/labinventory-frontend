@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/labinventory-frontend/precache-manifest.5de7b8b68eb3f6076053e66b0a956ced.js"
+  "/labinventory-frontend/precache-manifest.5a06d8dd191fa4959cb677fec7d83a3e.js"
 );
 
 self.addEventListener('message', (event) => {

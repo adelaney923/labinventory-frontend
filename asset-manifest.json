@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/labinventory-frontend/static/css/main.9df35f56.chunk.css",
-    "main.js": "/labinventory-frontend/static/js/main.71a62006.chunk.js",
-    "main.js.map": "/labinventory-frontend/static/js/main.71a62006.chunk.js.map",
+    "main.js": "/labinventory-frontend/static/js/main.b1c9c788.chunk.js",
+    "main.js.map": "/labinventory-frontend/static/js/main.b1c9c788.chunk.js.map",
     "runtime-main.js": "/labinventory-frontend/static/js/runtime-main.2d3a7f91.js",
     "runtime-main.js.map": "/labinventory-frontend/static/js/runtime-main.2d3a7f91.js.map",
     "static/css/2.68a81a89.chunk.css": "/labinventory-frontend/static/css/2.68a81a89.chunk.css",
     "static/js/2.eac396da.chunk.js": "/labinventory-frontend/static/js/2.eac396da.chunk.js",
     "static/js/2.eac396da.chunk.js.map": "/labinventory-frontend/static/js/2.eac396da.chunk.js.map",
     "index.html": "/labinventory-frontend/index.html",
-    "precache-manifest.5de7b8b68eb3f6076053e66b0a956ced.js": "/labinventory-frontend/precache-manifest.5de7b8b68eb3f6076053e66b0a956ced.js",
+    "precache-manifest.5a06d8dd191fa4959cb677fec7d83a3e.js": "/labinventory-frontend/precache-manifest.5a06d8dd191fa4959cb677fec7d83a3e.js",
     "service-worker.js": "/labinventory-frontend/service-worker.js",
     "static/css/2.68a81a89.chunk.css.map": "/labinventory-frontend/static/css/2.68a81a89.chunk.css.map",
     "static/css/main.9df35f56.chunk.css.map": "/labinventory-frontend/static/css/main.9df35f56.chunk.css.map"
@@ -19,6 +19,6 @@
     "static/css/2.68a81a89.chunk.css",
     "static/js/2.eac396da.chunk.js",
     "static/css/main.9df35f56.chunk.css",
-    "static/js/main.71a62006.chunk.js"
+    "static/js/main.b1c9c788.chunk.js"
   ]
 }

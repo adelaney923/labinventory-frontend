@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4148168d1801d955b7a0fa5d89462195",
+    "revision": "ab34538d4a2280b8dc07a4a3be789a5f",
     "url": "/labinventory-frontend/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/labinventory-frontend/static/css/2.68a81a89.chunk.css"
   },
   {
-    "revision": "05608aef473d199ea848",
+    "revision": "7af5d24c5bbbf4bb4048",
     "url": "/labinventory-frontend/static/css/main.9df35f56.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/labinventory-frontend/static/js/2.eac396da.chunk.js"
   },
   {
-    "revision": "05608aef473d199ea848",
-    "url": "/labinventory-frontend/static/js/main.71a62006.chunk.js"
+    "revision": "7af5d24c5bbbf4bb4048",
+    "url": "/labinventory-frontend/static/js/main.b1c9c788.chunk.js"
   },
   {
     "revision": "8b0b40c92ca3b03eaff5",
